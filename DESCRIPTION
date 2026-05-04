@@ -1,0 +1,5 @@
+G-STRESSER - Advanced Network Stress Testing Platform
+
+A comprehensive DDoS/stress testing solution featuring Node.js API server, Go-based CNC (Command & Control) terminal, Flutter mobile app, and web dashboard. Supports multiple attack methods, real-time monitoring, JWT authentication, and tiered subscription plans.
+
+Key Technologies: Node.js, Express, Go, Flutter, JWT, PM2, Telnet
