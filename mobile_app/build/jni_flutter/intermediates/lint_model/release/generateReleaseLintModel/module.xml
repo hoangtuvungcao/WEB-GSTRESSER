@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/vantrong/.pub-cache/hosted/pub.dev/jni_flutter-1.0.1/android"
+    name=":jni_flutter"
+    type="LIBRARY"
+    maven="com.github.dart_lang.jni_flutter:jni_flutter:1.0"
+    agpVersion="8.11.1"
+    buildFolder="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter"
+    bootClassPath="/home/vantrong/Android/Sdk/platforms/android-35/android.jar:/home/vantrong/Android/Sdk/build-tools/35.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-35"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

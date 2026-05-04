@@ -1,0 +1,9 @@
+-- The C compiler identification is Clang 19.0.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/vantrong/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/vantrong/.pub-cache/hosted/pub.dev/jni-1.0.0/android/.cxx/RelWithDebInfo/222z4591/arm64-v8a

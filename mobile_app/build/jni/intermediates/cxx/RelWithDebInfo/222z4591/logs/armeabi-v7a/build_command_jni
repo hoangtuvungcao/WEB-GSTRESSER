@@ -1,0 +1,4 @@
+/home/vantrong/Android/Sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /home/vantrong/.pub-cache/hosted/pub.dev/jni-1.0.0/android/.cxx/RelWithDebInfo/222z4591/armeabi-v7a \
+  jni

@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "io.flutter.plugins.webviewflutter.webview_flutter_android-release-26:/drawable-v21/notification_action_background.xml",
+        "source": "io.flutter.plugins.webviewflutter.webview_flutter_android-core-1.13.1-11:/drawable-v21/notification_action_background.xml"
+    }
+]

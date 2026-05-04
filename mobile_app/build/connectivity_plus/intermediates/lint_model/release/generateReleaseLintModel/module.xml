@@ -1,0 +1,26 @@
+<lint-module
+    format="1"
+    dir="/home/vantrong/.pub-cache/hosted/pub.dev/connectivity_plus-7.1.1/android"
+    name=":connectivity_plus"
+    type="LIBRARY"
+    maven="dev.fluttercommunity.plus.connectivity:connectivity_plus:1.0-SNAPSHOT"
+    agpVersion="8.11.1"
+    buildFolder="/home/vantrong/Downloads/ddos/api/mobile_app/build/connectivity_plus"
+    bootClassPath="/home/vantrong/Android/Sdk/platforms/android-36/android.jar:/home/vantrong/Android/Sdk/build-tools/35.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-36"
+    neverShrinking="true">
+  <lintOptions
+      disable="InvalidPackage"
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="InvalidPackage"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>

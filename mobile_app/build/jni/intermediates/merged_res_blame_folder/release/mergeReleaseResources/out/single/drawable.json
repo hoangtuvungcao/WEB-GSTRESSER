@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.github.dart_lang.jni-release-25:/drawable/notification_icon_background.xml",
+        "source": "com.github.dart_lang.jni-core-1.13.1-11:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni-release-25:/drawable/notification_bg_low.xml",
+        "source": "com.github.dart_lang.jni-core-1.13.1-11:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni-release-25:/drawable/notification_bg.xml",
+        "source": "com.github.dart_lang.jni-core-1.13.1-11:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni-release-25:/drawable/notification_tile_bg.xml",
+        "source": "com.github.dart_lang.jni-core-1.13.1-11:/drawable/notification_tile_bg.xml"
+    }
+]

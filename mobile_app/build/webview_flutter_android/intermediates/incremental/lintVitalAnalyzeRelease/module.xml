@@ -1,0 +1,37 @@
+<lint-module
+    format="1"
+    dir="/home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android"
+    name=":webview_flutter_android"
+    type="LIBRARY"
+    maven="io.flutter.plugins.webviewflutter:webview_flutter_android:1.0-SNAPSHOT"
+    agpVersion="8.11.1"
+    buildFolder="/home/vantrong/Downloads/ddos/api/mobile_app/build/webview_flutter_android"
+    bootClassPath="/home/vantrong/Android/Sdk/platforms/android-36/android.jar:/home/vantrong/Android/Sdk/build-tools/35.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-36"
+    neverShrinking="true">
+  <lintOptions
+      disable="AndroidGradlePluginVersion,InvalidPackage,GradleDependency,NewerVersionAvailable"
+      abortOnError="true"
+      absolutePaths="true"
+      checkAllWarnings="true"
+      warningsAsErrors="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="AndroidGradlePluginVersion"
+        severity="IGNORE" />
+      <severity
+        id="GradleDependency"
+        severity="IGNORE" />
+      <severity
+        id="InvalidPackage"
+        severity="IGNORE" />
+      <severity
+        id="NewerVersionAvailable"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>

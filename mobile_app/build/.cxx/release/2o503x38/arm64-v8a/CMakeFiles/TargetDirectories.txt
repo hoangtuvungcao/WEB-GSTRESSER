@@ -1,0 +1,2 @@
+/home/vantrong/Downloads/ddos/api/mobile_app/build/.cxx/release/2o503x38/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/vantrong/Downloads/ddos/api/mobile_app/build/.cxx/release/2o503x38/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+#Mon Apr 13 19:24:51 UTC 2026
+base.0=/home/vantrong/Downloads/ddos/api/mobile_app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

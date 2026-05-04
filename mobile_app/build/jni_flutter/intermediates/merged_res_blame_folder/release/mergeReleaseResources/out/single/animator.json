@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.github.dart_lang.jni_flutter-release-26:/animator/fragment_fade_exit.xml",
+        "source": "com.github.dart_lang.jni_flutter-fragment-1.7.1-4:/animator/fragment_fade_exit.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni_flutter-release-26:/animator/fragment_open_enter.xml",
+        "source": "com.github.dart_lang.jni_flutter-fragment-1.7.1-4:/animator/fragment_open_enter.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni_flutter-release-26:/animator/fragment_fade_enter.xml",
+        "source": "com.github.dart_lang.jni_flutter-fragment-1.7.1-4:/animator/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni_flutter-release-26:/animator/fragment_close_exit.xml",
+        "source": "com.github.dart_lang.jni_flutter-fragment-1.7.1-4:/animator/fragment_close_exit.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni_flutter-release-26:/animator/fragment_close_enter.xml",
+        "source": "com.github.dart_lang.jni_flutter-fragment-1.7.1-4:/animator/fragment_close_enter.xml"
+    },
+    {
+        "merged": "com.github.dart_lang.jni_flutter-release-26:/animator/fragment_open_exit.xml",
+        "source": "com.github.dart_lang.jni_flutter-fragment-1.7.1-4:/animator/fragment_open_exit.xml"
+    }
+]

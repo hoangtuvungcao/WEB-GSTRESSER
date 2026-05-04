@@ -1,0 +1,15 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml:1:1-2:12
+INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml:1:1-2:12
+	package
+		ADDED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml:1:11-54
+		INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml
+uses-sdk
+INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml
+INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/vantrong/.pub-cache/hosted/pub.dev/webview_flutter_android-4.11.0/android/src/main/AndroidManifest.xml

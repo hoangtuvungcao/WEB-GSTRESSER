@@ -1,0 +1,5 @@
+ninja: Entering directory `/home/vantrong/.pub-cache/hosted/pub.dev/jni-1.0.0/android/.cxx/RelWithDebInfo/222z4591/x86'
+[1/4] Building C object CMakeFiles/jni.dir/include/dart_api_dl.c.o
+[2/4] Building C object CMakeFiles/jni.dir/dartjni.c.o
+[3/4] Building C object CMakeFiles/jni.dir/third_party/global_jni_env.c.o
+[4/4] Linking C shared library /home/vantrong/Downloads/ddos/api/mobile_app/build/jni/intermediates/cxx/RelWithDebInfo/222z4591/obj/x86/libdartjni.so

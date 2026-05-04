@@ -1,0 +1,32 @@
+<variant
+    name="release"
+    package="com.github.dart_lang.jni_flutter"
+    minSdkVersion="21"
+    targetSdkVersion="21"
+    mergedManifest="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/intermediates/merged_manifest/release/processReleaseManifest/AndroidManifest.xml"
+    manifestMergeReport="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/outputs/logs/manifest-merger-release-report.txt"
+    proguardFiles="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/intermediates/default_proguard_files/global/proguard-android.txt-8.11.1"
+    consumerProguardFiles="consumer-rules.pro"
+    partialResultsDir="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/intermediates/lint_partial_results/release/lintAnalyzeRelease/out">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="src/main/AndroidManifest.xml"
+        javaDirectories="src/main/java:src/release/java:src/main/kotlin:src/release/kotlin"
+        resDirectories="src/main/res:src/release/res"
+        assetsDirectories="src/main/assets:src/release/assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      classOutputs="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/intermediates/javac/release/compileReleaseJavaWithJavac/classes:/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/intermediates/compile_r_class_jar/release/generateReleaseRFile/R.jar"
+      type="MAIN"
+      applicationId="com.github.dart_lang.jni_flutter"
+      generatedSourceFolders="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/generated/ap_generated_sources/release/out"
+      generatedResourceFolders="/home/vantrong/Downloads/ddos/api/mobile_app/build/jni_flutter/generated/res/resValues/release"
+      desugaredMethodsFiles="/home/vantrong/.gradle/caches/8.14/transforms/34558a5168a871a4c6c81cc98ade18b5/transformed/D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>
