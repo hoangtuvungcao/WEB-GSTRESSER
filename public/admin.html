@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | G-STRESSER - System Administration</title>
+    <meta name="description" content="G-STRESSER administration panel. User management, server monitoring, attack logs, system configuration. Advanced nexus operations.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+
+<body class="mysterious">
+    <!-- Hacker Style Effects -->
+    <div class="hacker-scanline"></div>
+    
+    <!-- Floating Background Effects -->
+    <div class="floating-orb floating-orb-1"></div>
+    <div class="floating-orb floating-orb-2"></div>
+    <div class="floating-orb floating-orb-3"></div>
+    
+    <!-- Floating Stars -->
+    <div id="starsContainer" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+    
+    <!-- Geometric Shapes -->
+    <div id="shapesContainer" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+    
+    <!-- Neon Lines -->
+    <div id="linesContainer" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+    
+    <div class="particle-container" id="particleContainer"></div>
+    
+    <div class="glow-overlay">
+        <div class="glow-blob glow-1"></div>
+        <div class="glow-blob glow-2"></div>
+        <div class="glow-blob glow-3"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="notify-container"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar injected by sidebar.js?v=1.1 -->
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <div>
+                    <h1 class="glitch neon-stroke" data-text="ADMIN HUB" style="font-size: 2.5rem; margin: 0;">ADMIN HUB</h1>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; text-shadow: 0 0 10px rgba(157, 0, 255, 0.1);">Advanced Nexus Operations
+                    </p>
+                </div>
+                <div class="header-right-actions">
+                    <button class="btn-small mobile-toggle" onclick="toggleSidebar()"
+                        style="padding: 10px;">MENU</button>
+                    <div class="user-profile" style="margin-left: 15px;">
+                        <div class="user-meta">
+                            <span id="dispUser" class="username" style="text-shadow: 0 0 10px var(--neon-purple);">ROOT</span>
+                            <span class="user-status">ONLINE</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid" style="margin-top: 20px;">
+                <!-- User Management -->
+                <div class="card cyber-border">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                        <h3 style="color: var(--neon-purple); margin: 0; font-size: 1.1rem; letter-spacing: 1px; text-shadow: 0 0 15px var(--neon-purple);">⟨ USERS CONTROL ⟩</h3>
+                        <button onclick="addUser()" class="btn-small" style="box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);">+ ADD NEW</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="userTable">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Plan</th>
+                                    <th>Slots</th>
+                                    <th>ConC</th>
+                                    <th>Exp</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Server Management -->
+                <div class="card cyber-border">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 25px; font-size: 1.1rem; letter-spacing: 1px; text-shadow: 0 0 15px var(--neon-purple);">
+                        ⟨ SERVERS MONITOR ⟩</h3>
+                    <div class="table-responsive">
+                        <table id="serverTable">
+                            <thead>
+                                <tr>
+                                    <th>Server</th>
+                                    <th>Host</th>
+                                    <th>Slots</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Methods Management -->
+                <div class="card">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 25px; font-size: 1.1rem; letter-spacing: 1px;">
+                        METHODS CONTROL</h3>
+                    <div class="table-responsive">
+                        <table id="methodTable">
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Proxy Management -->
+                <div class="card">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 25px; font-size: 1.1rem; letter-spacing: 1px;">
+                        PROXY SYNCHRONIZATION</h3>
+                    <div
+                        style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.1);">
+                        <p style="color: #666; font-size: 0.8rem; margin-bottom: 15px;">Upload proxy file. System will
+                            automatically rename it to <span style="color: var(--neon-green);">proxy.txt</span> and sync
+                            to
+                            all online VPS nodes.</p>
+                        <input type="file" id="proxyFileInput" style="display: none;" accept=".txt">
+                        <button onclick="document.getElementById('proxyFileInput').click()" class="btn-small"
+                            style="width: 100%; border-style: dashed;">SELECT PROXY FILE (.TXT)</button>
+                        <div id="proxyUploadStatus" style="margin-top: 15px; font-size: 0.85rem; display: none;">
+                            <div id="proxyProgressText" style="color: #888; margin-bottom: 8px;">Preparing...</div>
+                            <div style="height: 4px; background: #222; border-radius: 2px; overflow: hidden;">
+                                <div id="proxyProgressBar"
+                                    style="width: 0%; height: 100%; background: var(--neon-purple); transition: 0.3s;">
+                                </div>
+                            </div>
+                            <ul id="proxyServerResults"
+                                style="margin-top: 10px; padding-left: 15px; color: #555; font-size: 0.75rem;"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logs -->
+                <div class="card card-full">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 25px; font-size: 1.1rem; letter-spacing: 1px;">
+                        OPERATION LOGS</h3>
+                    <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                        <table id="logTable">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Target</th>
+                                    <th>Method</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 15px; text-align: right;">
+                        <button onclick="clearLogs()" class="btn-small"
+                            style="color: #ff5f56; border-color: #ff5f56; background: transparent;">CLEAR ALL
+                            LOGS</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Modals -->
+            <div id="userModal" class="modal-overlay">
+                <div class="modal">
+                    <h3 id="modalTitle">User Operation</h3>
+                    <input type="hidden" id="modalAction">
+                    <input type="hidden" id="editUsername">
+                    <div id="userFields">
+                        <div class="input-group">
+                            <label>Username</label>
+                            <input type="text" id="inUser" placeholder="Enter username">
+                        </div>
+                        <div class="input-group">
+                            <label>Password</label>
+                            <input type="password" id="inPass" placeholder="Enter password">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="input-group">
+                                <label>Operation Slots</label>
+                                <input type="number" id="inSlots" placeholder="Slots">
+                            </div>
+                            <div class="input-group">
+                                <label>Concurrents</label>
+                                <input type="number" id="inConc" placeholder="Parallel Attacks">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Subscription Plan</label>
+                            <select id="inPlan">
+                                <!-- Populated dynamically via JS -->
+                            </select>
+                        </div>
+
+                        <div class="input-group" id="expField">
+                            <label>Expiration Date</label>
+                            <input type="date" id="inExp" value="2026-12-31">
+                        </div>
+                    </div>
+                    <button onclick="submitModal()" class="btn-neon"
+                        style="width: 100%; margin-top: 10px;">CONFIRM</button>
+                    <button onclick="closeModal()" class="btn-small"
+                        style="width: 100%; margin-top: 10px; border-color: #555; color: #555;">CANCEL</button>
+                </div>
+            </div>
+
+            <div id="confirmModal" class="modal-overlay">
+                <div class="modal">
+                    <h3 style="color: #ff5f56;">Xác nhận xóa?</h3>
+                    <p id="confirmMsg" style="color: #888; margin-bottom: 25px;">Bạn có chắc chắn muốn xóa user này
+                        không?
+                    </p>
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="submitDelete()" class="btn-neon"
+                            style="flex: 1; background: #ff5f56; border-color: #ff5f56;">XÓA NGAY</button>
+                        <button onclick="closeConfirmModal()" class="btn-small" style="flex: 1;">HỦY</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="assets/js/header.js"></script>
+            <script src="assets/js/sidebar.js?v=1.1"></script>
+            <script src="assets/js/admin.js"></script>
+            <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+            <script>
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": ["#00ff9d", "#9d00ff", "#00d4ff", "#ff00ea"] },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#9d00ff", "opacity": 0.2, "width": 1 },
+                        "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "out_mode": "out" }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+                    },
+                    "retina_detect": true
+                });
+            </script>
+            
+            <!-- Floating Effects Generator -->
+            <script src="assets/js/floating-effects.js?v=2.0"></script>
+</body>
+
+</html>

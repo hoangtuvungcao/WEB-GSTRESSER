@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | G-STRESSER - Secure Access to DDoS Platform</title>
+    <meta name="description"
+        content="G-STRESSER secure login portal. Access your DDoS stress testing account with secure authentication.">
+    <meta name="keywords" content="G-STRESSER login, DDoS platform login, secure authentication, account access">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stress.vpsgen.com/login">
+    <meta property="og:title" content="Login | G-STRESSER">
+    <meta property="og:description" content="Secure identity verification for G-STRESSER.">
+    <meta property="og:image" content="https://stress.vpsgen.com/assets/img/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Login | G-STRESSER">
+    <meta property="twitter:description" content="Secure DDoS platform authentication">
+
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="mysterious">
+    <!-- Hacker Style Effects -->
+    <div class="hacker-scanline"></div>
+
+    <!-- Floating Background Effects -->
+    <div class="floating-orb floating-orb-1"></div>
+    <div class="floating-orb floating-orb-2"></div>
+    <div class="floating-orb floating-orb-3"></div>
+
+    <!-- Floating Stars -->
+    <div id="starsContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Geometric Shapes -->
+    <div id="shapesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Neon Lines -->
+    <div id="linesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <div class="particle-container" id="particleContainer"></div>
+
+    <div class="glow-overlay">
+        <div class="glow-blob glow-1"></div>
+        <div class="glow-blob glow-2"></div>
+        <div class="glow-blob glow-3"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="global-header"></div>
+    <div class="glass-container" style="background: transparent;">
+        <div class="auth-card cyber-border"
+            style="position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(157, 0, 255, 0.3);">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--neon-purple), transparent); animation: scanline-infinite 3s linear infinite; box-shadow: 0 0 15px var(--neon-purple);">
+            </div>
+
+            <h2 class="glitch-login neon-stroke" data-text="AUTHENTICATION">AUTHENTICATION</h2>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" required autocomplete="off"
+                        style="border-color: rgba(0, 255, 157, 0.3); box-shadow: 0 0 10px rgba(0, 255, 157, 0.1);">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required
+                        style="border-color: rgba(157, 0, 255, 0.3); box-shadow: 0 0 10px rgba(157, 0, 255, 0.1);">
+                </div>
+
+                <button type="submit" class="btn-neon neon-box"
+                    style="width: 100%; box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);">⟳ LOGIN ⟳</button>
+
+                <div style="margin-top: 15px;">
+                    <button type="button" onclick="location.href='/register'" class="btn-neon"
+                        style="background: transparent; border-color: rgba(0, 255, 157, 0.3); color: var(--neon-green); width: 100%; font-size: 0.8rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon-green); box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);">⟳
+                        CREATE AN ACCOUNT ⟳</button>
+                    <button type="button" onclick="location.href='/'" class="btn-neon"
+                        style="background: transparent; border-color: rgba(255,255,255,0.2); color: #888; width: 100%; font-size: 0.8rem; letter-spacing: 2px; margin-top: 10px;">◄
+                        BACK TO HOME ►</button>
+                </div>
+            </form>
+            <p id="message" class="error-msg"></p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes scanline-infinite {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(400px);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // --- PROACTIVE SESSION REDIRECT ---
+        if (localStorage.getItem('token')) {
+            location.href = '/dashboard';
+        }
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#00ff9d", "#9d00ff", "#00d4ff", "#ff00ea"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+                "line_linked": { "enable": true, "distance": 150, "color": "#9d00ff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+
+        document.getElementById('loginForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const submitBtn = document.querySelector('button[type="submit"]');
+
+            submitBtn.classList.add('loading');
+            submitBtn.innerText = 'VERIFYING IDENTITY...';
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    submitBtn.innerText = 'ACCESS GRANTED';
+                    submitBtn.style.color = '#00ff9d';
+                    submitBtn.style.borderColor = '#00ff9d';
+                    localStorage.setItem('user', JSON.stringify({ username: username, plan: data.plan }));
+                    localStorage.setItem('token', data.token);
+                    setTimeout(() => location.href = data.isAdmin ? '/admin' : '/dashboard', 800);
+                } else {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.innerText = 'LOGIN';
+                    showStatus(data.message, 'error');
+                    const card = document.querySelector('.auth-card');
+                    card.classList.add('shake');
+                    setTimeout(() => card.classList.remove('shake'), 500);
+                }
+            } catch (e) {
+                submitBtn.classList.remove('loading');
+                submitBtn.innerText = 'LOGIN';
+                showStatus("System connection failure.", 'error');
+            }
+        };
+    </script>
+
+    <!-- Floating Effects Generator -->
+    <script src="assets/js/floating-effects.js?v=2.0"></script>
+    <script src="assets/js/header.js?v=1.1"></script>
+</body>
+
+</html>

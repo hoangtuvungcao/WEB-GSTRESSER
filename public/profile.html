@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity & Security Hub | G-STRESSER</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+
+<body class="mysterious">
+    <div class="hacker-scanline"></div>
+    <div class="particle-container" id="particleContainer"></div>
+    <div class="glow-overlay">
+        <div class="glow-blob glow-1"></div>
+        <div class="glow-blob glow-2"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="notify-container"></div>
+    <div id="global-header"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <div>
+                    <h1 class="glitch neon-stroke" data-text="IDENTITY & SECURITY"
+                        style="font-size: 2.5rem; margin: 0;">
+                        IDENTITY & SECURITY
+                    </h1>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Configure your Operator
+                        parameters</p>
+                </div>
+                <div class="header-right-actions">
+                    <button class="btn-small mobile-toggle" onclick="toggleSidebar()">MENU</button>
+                    <div class="user-profile" style="margin-left: 15px;">
+                        <span id="dispUser" class="username">OPERATOR</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="control-panel" style="grid-template-columns: 1fr 1.5fr; gap: 30px;">
+                <!-- Profile Settings -->
+                <div class="card cyber-border" style="border-color: rgba(0, 212, 255, 0.3);">
+                    <h3 style="color: var(--neon-blue); margin-bottom: 30px;">⟨ SYSTEM LINKAGE ⟩</h3>
+
+                    <div class="input-group">
+                        <label style="color: var(--neon-blue);">TELEGRAM ID LINK</label>
+                        <input type="number" id="telegramIdField" placeholder="Enter your Telegram Chat ID">
+                        <small style="color: var(--text-muted); font-size: 0.75rem; display: block; margin-top: 10px;">
+                            Linking your ID enables direct command execution via the Telegram Bot.
+                        </small>
+                    </div>
+
+                    <button onclick="submitUpdateProfile()" class="btn-neon"
+                        style="width: 100%; margin-top: 20px;">UPDATE LINKAGE</button>
+                </div>
+
+                <!-- Password Settings -->
+                <div class="card cyber-border" style="border-color: rgba(157, 0, 255, 0.3);">
+                    <h3 style="color: var(--neon-purple); margin-bottom: 30px;">⟨ CREDENTIAL OVERRIDE ⟩</h3>
+
+                    <div class="input-group">
+                        <label>CURRENT PASSCODE</label>
+                        <input type="password" id="curPass" placeholder="••••••••">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="input-group">
+                            <label>NEW PASSCODE</label>
+                            <input type="password" id="newPass" placeholder="••••••••">
+                        </div>
+                        <div class="input-group">
+                            <label>CONFIRM NEW PASSCODE</label>
+                            <input type="password" id="confirmPass" placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <p style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 20px;">Changing your password
+                        will terminate all active web sessions.</p>
+
+                    <button onclick="submitUpdateProfile(true)" class="btn-neon"
+                        style="width: 100%; border-color: var(--neon-purple); background: rgba(157, 0, 255, 0.05);">COMMIT
+                        CREDENTIAL CHANGE</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/sidebar.js?v=1.1"></script>
+    <script src="assets/js/header.js?v=1.1"></script>
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) location.href = '/login';
+
+        async function loadUserInfo() {
+            const res = await fetch('/api/user/info', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            const data = await res.json();
+            if (data.username) {
+                document.getElementById('dispUser').innerText = data.username;
+                document.getElementById('telegramIdField').value = data.telegramId || "";
+            } else {
+                location.href = '/login';
+            }
+        }
+        loadUserInfo();
+
+        async function submitUpdateProfile(isPassChange = false) {
+            const curPass = document.getElementById('curPass').value;
+            const newPass = document.getElementById('newPass').value;
+            const confirmPass = document.getElementById('confirmPass').value;
+            const telegramId = document.getElementById('telegramIdField').value;
+
+            if (isPassChange) {
+                if (!curPass || !newPass) return showStatus("Please enter all password details!", "error");
+                if (newPass !== confirmPass) return showStatus("New passwords do not match!", "error");
+                if (newPass.length < 6) return showStatus("New password must be at least 6 characters!", "error");
+            }
+
+            const btn = isPassChange ? document.querySelector('button[onclick="submitUpdateProfile(true)"]') : document.querySelector('button[onclick="submitUpdateProfile()"]');
+            btn.classList.add('loading');
+
+            try {
+                const body = { telegramId };
+                if (isPassChange) {
+                    body.currentPassword = curPass;
+                    body.newPassword = newPass;
+                }
+
+                const res = await fetch('/api/user/profile/update', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+                btn.classList.remove('loading');
+
+                if (!data.error) {
+                    showStatus("Profile updated successfully!", "success");
+                    if (isPassChange) {
+                        setTimeout(() => {
+                            localStorage.removeItem('token');
+                            location.href = '/login';
+                        }, 2000);
+                    } else {
+                        loadUserInfo();
+                    }
+                } else {
+                    showStatus(data.message || "Update failed!", "error");
+                }
+            } catch (err) {
+                btn.classList.remove('loading');
+                showStatus("Connection error!", "error");
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#00ff9d", "#9d00ff", "#00d4ff", "#ff00ea"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#9d00ff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2 }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" } },
+                "modes": { "grab": { "distance": 140 } }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <script src="assets/js/floating-effects.js?v=2.0"></script>
+</body>
+
+</html>

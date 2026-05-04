@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">G-STRESSER | Secure Access</title>
+
+    <!-- SEO & Branding -->
+    <meta name="description"
+        content="G-STRESSER - Elite Layer 4 & Layer 7 DDoS stress testing platform. Bypass Cloudflare, OVH protection. Advanced network penetration testing with proprietary attack vectors. Global infrastructure, zero logs.">
+    <meta name="keywords"
+        content="DDoS stresser, layer 4 attack, layer 7 attack, network stress test, booter, bypass cloudflare, bypass ovh, penetration testing, cybersecurity tools, stress testing platform, cloud infrastructure">
+    <meta name="author" content="G-STRESSER">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="G-STRESSER">
+    <meta property="og:url" content="https://stress.vpsgen.com/">
+    <meta property="og:title" content="G-STRESSER | Advanced DDoS Stress Testing Platform">
+    <meta property="og:description"
+        content="Elite Layer 4 & Layer 7 DDoS platform with proprietary attack vectors. Bypass modern protection. Global infrastructure.">
+    <meta property="og:image" content="https://stress.vpsgen.com/assets/img/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@G_STRESSER">
+    <meta name="twitter:title" content="G-STRESSER | Advanced DDoS Stress Testing">
+    <meta name="twitter:description" content="Elite Layer 4 & Layer 7 DDoS platform with proprietary attack vectors.">
+    <meta name="twitter:image" content="https://stress.vpsgen.com/assets/img/logo.png">
+
+    <!-- Canonical URL -->
+    <meta property="og:url" content="https://stress.vpsgen.com/">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00ff9d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="G-STRESSER">
+
+    <!-- Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stress.vpsgen.com/">
+    <meta property="og:title" content="G-STRESSER | Advanced Stress Testing">
+    <meta property="og:description"
+        content="Proprietary attack vectors and real-time analytics for professional network stress testing.">
+    <meta property="og:image" content="https://stress.vpsgen.com/assets/img/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="G-STRESSER | Advanced Stress Testing">
+    <meta property="twitter:description"
+        content="Proprietary attack vectors and real-time analytics for professional network stress testing.">
+    <meta property="twitter:image" content="https://stress.vpsgen.com/assets/img/logo.png">
+
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --hero-bg: radial-gradient(circle at top right, rgba(157, 0, 255, 0.1), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(0, 255, 157, 0.05), transparent 50%);
+            --neon-blue-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+
+        /* --- Header --- */
+        .header-main {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background: rgba(2, 2, 5, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(157, 0, 255, 0.2);
+        }
+
+        .logo-flex {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            filter: drop-shadow(0 0 10px var(--neon-purple));
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-actions .btn-huge {
+            padding: 10px 25px;
+            font-size: 0.8rem;
+            background: var(--neon-green);
+            color: #000;
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 6px;
+        }
+
+        /* --- Hero --- */
+        .hero {
+            padding: 180px 5% 100px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.08), transparent 70%);
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            margin-bottom: 25px;
+            max-width: 100%;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #aaa;
+            max-width: 650px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: 0;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hero-btns .btn-neon {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* --- Features --- */
+        .features-section {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .feat-card:hover {
+            border-color: var(--neon-blue);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .feat-card i {
+            font-size: 2rem;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- Pricing --- */
+        .pricing-section {
+            padding: 100px 5%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 480px;
+            /* Stabilize Hero -> Pricing transition */
+        }
+
+        .price-card {
+            background: #080810;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .price-card:hover {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 50px rgba(157, 0, 255, 0.15);
+            transform: scale(1.02);
+        }
+
+        .price-card.featured {
+            border-color: var(--neon-green);
+            border-width: 2px;
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .price-card.featured:hover {
+            box-shadow: 0 0 60px rgba(0, 255, 157, 0.2);
+        }
+
+        .tag-popular {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--neon-green);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
+
+        .price-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .price-amt {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .price-period {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+            flex-grow: 1;
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+
+        .check-list li::before {
+            content: "";
+        }
+
+        /* --- Footer --- */
+        .footer-main {
+            padding: 100px 10% 40px;
+            background: #020205;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 25px;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #666;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--neon-purple);
+        }
+
+        .footer-bottom {
+            padding: 40px 10% 0;
+            background: #020205;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 50px;
+            color: #444;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 992px) {
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .header-main {
+                padding: 0 3%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 140px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .logo-img {
+                height: 35px;
+            }
+
+            .nav-actions .btn-huge {
+                padding: 8px 15px;
+                font-size: 0.75rem;
+            }
+
+            .pricing-section {
+                padding: 60px 15px;
+            }
+
+            .price-card {
+                padding: 35px 25px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 60px 20px;
+                text-align: center;
+                justify-items: center;
+            }
+
+            .footer-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+
+            .logo-text {
+                display: none;
+            }
+
+            .header-main {
+                justify-content: space-between;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="mysterious">
+    <!-- Hacker Style Effects -->
+    <div class="hacker-scanline"></div>
+
+    <!-- Floating Background Effects -->
+    <div class="floating-orb floating-orb-1"></div>
+    <div class="floating-orb floating-orb-2"></div>
+    <div class="floating-orb floating-orb-3"></div>
+
+    <!-- Floating Stars -->
+    <div id="starsContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Geometric Shapes -->
+    <div id="shapesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Neon Lines -->
+    <div id="linesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Particle System -->
+    <div class="particle-container" id="particleContainer"></div>
+
+    <div class="glow-overlay">
+        <div class="glow-blob glow-1"></div>
+        <div class="glow-blob glow-2"></div>
+        <div class="glow-blob glow-3"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div class="scanlines"></div>
+
+    <div id="global-header"></div>
+    <div class="landing-wrapper">
+
+        <section class="hero">
+            <h1 class="glitch glitch-intense neon-stroke" id="heroTitle" data-text="CYBER DOMINANCE">CYBER DOMINANCE
+            </h1>
+            <p id="heroTagline" style="color: #aaa; text-shadow: 0 0 10px rgba(0, 255, 157, 0.2);">Unleash advanced
+                protocol testing with the world's most sophisticated cloud
+                infrastructure. Pure power, zero logs.</p>
+            <div class="hero-btns">
+                <button onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})"
+                    class="btn-neon neon-box"
+                    style="letter-spacing: 2px; box-shadow: 0 0 30px rgba(0, 255, 157, 0.3);">▶ VIEW PROTOCOLS
+                    ◀</button>
+                <button id="tgHeroBtn" class="btn-neon cyber-border"
+                    style="background:rgba(255,255,255,0.03); border-color:rgba(255,255,255,0.1); color:#fff; backdrop-filter:blur(10px);">⟳
+                    TELEGRAM ⟳</button>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="feat-card cyber-border">
+                <h3 style="text-shadow: 0 0 15px rgba(0, 255, 157, 0.3);">High Intensity</h3>
+                <p style="color:#666; font-size:0.9rem; margin-top:10px;">Proprietary L4/L7 methods designed to bypass
+                    modern protection clusters with ease.</p>
+            </div>
+            <div class="feat-card cyber-border">
+                <h3 style="text-shadow: 0 0 15px rgba(157, 0, 255, 0.3);">Zero Tracking</h3>
+                <p style="color:#666; font-size:0.9rem; margin-top:10px;">Our infrastructure operates on RAM-only nodes.
+                    No logs are ever stored or transmitted.</p>
+            </div>
+            <div class="feat-card cyber-border">
+                <h3 style="text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);">Global Network</h3>
+                <p style="color:#666; font-size:0.9rem; margin-top:10px;">Strategically located nodes across EU, US, and
+                    ASIA for maximum targeting effectiveness.</p>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="pricing-header">
+                <h2 class="glitch neon-stroke" data-text="ACCESS PLANS" style="font-size: 2.5rem;">ACCESS PLANS</h2>
+                <p style="color:#555; text-shadow: 0 0 10px rgba(157, 0, 255, 0.1);">Choose the bandwidth capacity that
+                    fits your requirements.</p>
+            </div>
+            <div id="pricingGrid" class="pricing-grid">
+                <!-- Dynamic -->
+            </div>
+
+            <!-- API & INFRASTRUCTURE TIERED ACCESS -->
+            <div class="api-promo-container"
+                style="margin-top: 60px; text-align: center; animation: fadeInUp 1s ease-out;">
+                <div
+                    style="background: rgba(157, 0, 255, 0.05); border: 2px dashed rgba(157, 0, 255, 0.6); border-radius: 20px; padding: 40px; display: inline-block; max-width: 800px; backdrop-filter: blur(5px); box-shadow: 0 0 40px rgba(157, 0, 255, 0.3); animation: neon-box-pulse 3s ease-in-out infinite;">
+                    <h3
+                        style="font-family: 'Orbitron', sans-serif; color: var(--neon-purple); letter-spacing: 4px; margin-bottom: 20px; font-size: 1.5rem; text-shadow: 0 0 20px var(--neon-purple);">
+                        ⟨ TIERED ACCESS MODEL ⟩
+                    </h3>
+                    <p style="color: #999; line-height: 1.8; font-size: 1rem; max-width: 650px; margin: 0 auto;">
+                    <p id="tieredModelText"
+                        style="color: #999; line-height: 1.8; font-size: 1rem; max-width: 650px; margin: 0 auto;"></p>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-main cyber-border">
+            <div class="footer-col">
+                <img src="assets/img/logo.png"
+                    style="height:40px; filter:grayscale(1) opacity(0.5); margin-bottom:20px; box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);">
+                <p style="color:#555; font-size:0.9rem; line-height:1.6;">Providing elite security intelligence and
+                    stress testing infrastructure for the modern internet age.</p>
+            </div>
+            <div class="footer-col" id="footerLinks">
+                <h4 style="text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);">PLATFORM</h4>
+                <ul>
+                    <li><a href="/login">Identity Verification</a></li>
+                    <li><a href="/dashboard">Operation Room</a></li>
+                    <li><a href="/api.html">API Documentation</a></li>
+                    <li><a href="/methods">Method Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 style="text-shadow: 0 0 10px rgba(157, 0, 255, 0.3);">CONNECT</h4>
+                <ul>
+                    <li><a href="#" id="tgFooterLink" target="_blank">Telegram Channel</a></li>
+                    <li><a href="#" id="discordFooterLink" target="_blank">Discord Alpha</a></li>
+                    <li><a href="#" id="emailFooter">Support Mail</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 style="text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);">SYSTEM</h4>
+                <ul>
+                    <li style="text-shadow: 0 0 8px rgba(0, 255, 157, 0.2);">API Node v2.1</li>
+                    <li style="text-shadow: 0 0 8px rgba(0, 255, 157, 0.2);">Cluster Health: 100%</li>
+                    <li style="text-shadow: 0 0 8px rgba(0, 255, 157, 0.2);">Est. RPS: 2,500,000</li>
+                </ul>
+            </div>
+        </footer>
+
+        <div class="footer-bottom"
+            style="flex-direction: column; text-align: center; gap: 10px; background: linear-gradient(90deg, rgba(157, 0, 255, 0.03), transparent, rgba(0, 255, 157, 0.03));">
+            <p style="text-shadow: 0 0 10px rgba(0, 255, 157, 0.2);">© 2026 <span id="siteNameFooter">G-STRESSER</span>
+                INC. ALL RIGHTS RESERVED.</p>
+            <p style="opacity: 0.3; text-shadow: 0 0 5px rgba(0, 255, 157, 0.1);">CYBER INTELLIGENCE UNIT // PROTOCOL 77
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="assets/js/header.js?v=2.5"></script>
+    <script src="assets/js/main.js?v=2.5"></script>
+    <script>
+        let tgAdminLink = "#";
+        let tgChannelLink = "#";
+        async function init() {
+            try {
+                // Load Settings
+                const sRes = await fetch('/api/public/settings');
+                const settings = await sRes.json();
+
+                // Settings - Safe loading
+                const sEl = (id) => document.getElementById(id);
+                if (sEl('pageTitle')) sEl('pageTitle').innerText = `${settings.siteName} | Private Access`;
+                if (sEl('headerLogoText')) sEl('headerLogoText').innerText = settings.siteName;
+                if (sEl('siteNameFooter')) sEl('siteNameFooter').innerText = settings.siteName;
+                if (sEl('heroTitle')) {
+                    sEl('heroTitle').innerText = settings.siteName;
+                    sEl('heroTitle').dataset.text = settings.siteName;
+                }
+                if (sEl('heroTagline')) sEl('heroTagline').innerText = settings.siteTagline;
+
+                tgAdminLink = settings.telegramAdmin;
+                tgChannelLink = settings.telegramChannel;
+
+                if (sEl('tgHeroBtn')) sEl('tgHeroBtn').onclick = () => window.open(tgChannelLink, '_blank');
+                if (sEl('tgFooterLink')) sEl('tgFooterLink').href = settings.telegramChannel;
+                if (sEl('discordFooterLink')) sEl('discordFooterLink').href = settings.discordLink;
+                if (sEl('emailFooter')) {
+                    sEl('emailFooter').innerText = settings.contactEmail;
+                    sEl('emailFooter').href = "mailto:" + settings.contactEmail;
+                }
+
+                // Check Session - Legacy check can be bypassed as header.js?v=1.1 handles it
+                const token = localStorage.getItem('token');
+
+                // Load Plans
+                const pRes = await fetch('/api/public/plans');
+                const plans = await pRes.json();
+                const grid = document.getElementById('pricingGrid');
+                grid.innerHTML = '';
+
+                Object.keys(plans).filter(k => k.toLowerCase() !== 'admin').forEach(pName => {
+                    const p = plans[pName];
+                    const isF = pName === 'VIP1';
+                    const card = document.createElement('div');
+                    card.className = `price-card ${isF ? 'featured' : ''}`;
+
+                    let feats = '';
+                    (p.features || []).forEach(f => feats += `<li>${f}</li>`);
+
+                    // Access badges
+                    const apiB = p.api_access ? '✅' : '❌';
+                    const cncB = p.cnc_access ? '✅' : '❌';
+                    const botB = p.tele_bot ? '✅' : '❌';
+
+                    card.innerHTML = `
+                        ${isF ? '<span class="tag-popular">MOST POPULAR</span>' : ''}
+                        <div class="price-name">${pName}</div>
+                        <div class="price-amt">${p.price} <span style="font-size:1.2rem; color:var(--neon-green); opacity:0.8; margin-left:5px;">/ ${p.price_usd}</span></div>
+                        <div class="price-period">${p.period || '/month'}</div>
+                        <ul class="check-list">${feats}</ul>
+                        <div style="display:flex; justify-content:center; gap:12px; margin:15px 0 20px; font-size:0.8rem; letter-spacing:0.5px;">
+                            <span style="color:${p.api_access ? 'var(--neon-green)' : '#555'};">${apiB} API</span>
+                            <span style="color:${p.cnc_access ? 'var(--neon-purple)' : '#555'};">${cncB} CNC</span>
+                            <span style="color:${p.tele_bot ? 'var(--neon-blue)' : '#555'};">${botB} BOT</span>
+                        </div>
+                        <button onclick="window.open('${settings.telegramAdmin}', '_blank')" class="btn-neon" 
+                                style="width:100%; letter-spacing:1px; ${isF ? 'background:var(--neon-green);color:#000;border:none;' : ''}">
+                            INITIALIZE ACCESS
+                        </button>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                // Render dynamic Tiered Access Model
+                const tierBox = document.getElementById('tieredModelText');
+                if (tierBox) {
+                    let promoHTML = '';
+                    const tierColors = {
+                        'Free': '#ff5f56',
+                        'VIP': 'var(--neon-green)',
+                        'VIP1': 'var(--neon-blue)',
+                        'VIP2': 'var(--neon-purple)',
+                        'Admin': 'var(--neon-purple)'
+                    };
+                    Object.keys(plans).filter(k => k.toLowerCase() !== 'admin').forEach(pName => {
+                        const p = plans[pName];
+                        const color = tierColors[pName] || 'var(--neon-green)';
+                        let summary = '';
+                        if (p.slots === 0) {
+                            summary = 'Dashboard preview only. No attacks, no API, no CNC, no Bot.';
+                        } else {
+                            summary = `Stresser (${p.slots} slot, ${p.maxTime}s)`;
+                            if (p.api_access) summary += ' + Full API';
+                            if (p.cnc_access) summary += ' + CNC/C2 Terminal';
+                            if (p.tele_bot) summary += ' + Telegram Bot';
+                            if (p.bypassBlacklist) summary += ' + Bypass Blacklist';
+                        }
+                        promoHTML += `<strong style="color: ${color};">${pName}</strong> — ${summary}<br>`;
+                    });
+                    tierBox.innerHTML = promoHTML;
+                }
+
+            } catch (e) { console.error(e); }
+        }
+        init();
+
+        // --- REVEAL ON SCROLL ---
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feat-card, .price-card, .hero h1, .hero p, .hero-btns').forEach(el => {
+            el.classList.add('reveal-item');
+            observer.observe(el);
+        });
+    </script>
+    <style>
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feat-card:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .feat-card:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+    </style>
+
+    <!-- Floating Effects Generator -->
+    <script src="assets/js/floating-effects.js?v=2.0"></script>
+</body>
+
+</html>

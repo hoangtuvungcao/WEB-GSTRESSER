@@ -1,0 +1,22 @@
+[
+    {
+        "username": "Vantrong",
+        "password": "$2b$10$GFlFwBFu.1WxbRyZcPSTkuHiDIQHlRQgVqCP2FwZJ1VwwISXougfi",
+        "plan": "Admin",
+        "expiration": "2027-01-08",
+        "slots": 2,
+        "concurrents": 2,
+        "apiKey": "gst-248ef3e7ac5741a3a2d5e0f9bb405dac",
+        "telegramId": "5805939083"
+    },
+    {
+        "username": "quangdung1",
+        "password": "$2b$10$43d3Oe5QybiKAwBJJg4Zte5bvKJaLShVxBK7ZaqS8jCaNwj.AhzKC",
+        "plan": "VIP2",
+        "expiration": "2026-04-30",
+        "apiKey": "gst-68e0da6934834d7bb138938ff3962c0c",
+        "telegramId": "",
+        "slots": 2,
+        "concurrents": 2
+    }
+]

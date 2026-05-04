@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Analytics | G-STRESSER - DDoS Attack Vectors Library</title>
+    <meta name="description"
+        content="G-STRESSER methods analytics. Real-time intelligence on Layer 4 & Layer 7 attack vectors. Bypass Cloudflare, OVH, AWS Shield protection. Advanced network stress testing methods.">
+    <meta name="keywords"
+        content="DDoS methods, attack vectors, Layer 4 attacks, Layer 7 attacks, stress test methods, bypass protection, network testing">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Method Analytics | G-STRESSER">
+    <meta property="og:description" content="Real-time intelligence on DDoS attack vectors and methods">
+    <meta property="og:url" content="https://stress.vpsgen.com/methods.html">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .methods-wrapper {
+            padding-top: 120px;
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, rgba(0, 212, 255, 0.05), transparent 60%);
+        }
+
+        .method-group {
+            margin-bottom: 50px;
+        }
+
+        .group-header {
+            border-left: 4px solid var(--neon-purple);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .group-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+        }
+
+        .group-header p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .method-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 255, 157, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .method-card:hover {
+            border-color: var(--neon-blue);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .method-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 50px;
+        }
+
+        .status-online {
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+        }
+
+        .status-offline {
+            background: rgba(255, 95, 86, 0.1);
+            color: #ff5f56;
+            border: 1px solid #ff5f56;
+            box-shadow: 0 0 10px rgba(255, 95, 86, 0.2);
+        }
+
+        .method-name {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+        }
+
+        .method-desc {
+            color: #aaa;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 2px solid rgba(0, 255, 157, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .method-tag {
+            font-size: 0.7rem;
+            color: var(--neon-purple);
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid var(--neon-purple);
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            box-shadow: 0 0 8px rgba(157, 0, 255, 0.2);
+        }
+
+        /* Navigation Header */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background: rgba(2, 2, 5, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(157, 0, 255, 0.2);
+        }
+
+        .logo-flex {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            filter: drop-shadow(0 0 10px var(--neon-purple));
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        footer {
+            padding: 60px 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 100px;
+            text-align: center;
+            color: #444;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body class="mysterious">
+    <!-- Hacker Style Effects -->
+    <div class="hacker-scanline"></div>
+
+    <!-- Floating Background Effects -->
+    <div class="floating-orb floating-orb-1"></div>
+    <div class="floating-orb floating-orb-2"></div>
+    <div class="floating-orb floating-orb-3"></div>
+
+    <!-- Floating Stars -->
+    <div id="starsContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Geometric Shapes -->
+    <div id="shapesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Neon Lines -->
+    <div id="linesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <div class="particle-container" id="particleContainer"></div>
+
+    <div id="particles-js"></div>
+
+    <div id="global-header"></div>
+
+    <div class="glass-container methods-wrapper">
+        <header style="text-align: center; margin-bottom: 80px;">
+            <h1 class="glitch" data-text="METHOD ANALYTICS" style="font-size: 3.5rem;">METHOD ANALYTICS</h1>
+            <p style="color: #666; max-width: 600px; margin: 20px auto;">Real-time intelligence on our proprietary
+                attack vectors. Every method is optimized for the latest protection bypass protocols.</p>
+        </header>
+
+        <div id="methodsContainer">
+            <!-- Dynamically populated -->
+        </div>
+
+        <footer>
+            <p style="letter-spacing: 2px;">© 2026 <span id="siteNameFooter">G-STRESSER</span> INC. ALL RIGHTS RESERVED.
+            </p>
+            <p style="margin-top: 10px; font-size:0.7rem; opacity:0.5;">ENCRYPTED ACCESS ONLY // PROTOCOL ANALYTICS V1.0
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/header.js?v=2.5"></script>
+    <script src="assets/js/main.js?v=2.5"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#00ff9d", "#9d00ff", "#00d4ff", "#ff00ea"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+                "line_linked": { "enable": true, "distance": 150, "color": "#9d00ff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+        async function loadData() {
+            try {
+                // Settings - Use optional chaining for dynamic header elements
+                const sRes = await fetch('/api/public/settings');
+                const settings = await sRes.json();
+                const siteHeader = document.getElementById('siteNameHeader');
+                if (siteHeader) siteHeader.innerText = settings.siteName;
+                const siteFooter = document.getElementById('siteNameFooter');
+                if (siteFooter) siteFooter.innerText = settings.siteName;
+                document.title = `${settings.siteName} | Method Analytics`;
+
+                // Methods
+                const mRes = await fetch('/api/methods');
+                const methods = await mRes.json();
+                const container = document.getElementById('methodsContainer');
+                container.innerHTML = '';
+
+                for (let group in methods) {
+                    const section = document.createElement('div');
+                    section.className = 'method-group';
+
+                    const header = document.createElement('div');
+                    header.className = 'group-header';
+                    header.innerHTML = `
+                        <h2>${group.toUpperCase()} LAYER</h2>
+                        <p>High-intensity vectors specifically tuned for ${group} infrastructure.</p>
+                    `;
+                    section.appendChild(header);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'methods-grid';
+
+                    for (let mName in methods[group]) {
+                        const m = methods[group][mName];
+                        const card = document.createElement('div');
+                        card.className = 'method-card';
+
+                        card.innerHTML = `
+                            <span class="method-status ${m.status === 'online' ? 'status-online' : 'status-offline'}">
+                                ${(m.status || 'online').toUpperCase()}
+                            </span>
+                            <div class="method-name">${mName}</div>
+                            <div class="method-desc">${m.description || 'Optimized for high-concurrency target overwhelming with minimal footprint.'}</div>
+                            <span class="method-tag">${group} Vector</span>
+                        `;
+                        grid.appendChild(card);
+                    }
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        loadData();
+    </script>
+
+    <!-- Floating Effects Generator -->
+    <script src="assets/js/floating-effects.js?v=2.0"></script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "G-STRESSER Method Analytics",
+        "description": "Real-time DDoS attack vectors and methods intelligence",
+        "url": "https://stress.vpsgen.com/methods.html"
+    }
+    </script>
+</body>
+
+</html>

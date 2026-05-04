@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | NOT FOUND</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #020205;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--neon-purple);
+            text-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+            margin: 0;
+            letter-spacing: 15px;
+        }
+
+        .error-message {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-top: -10px;
+            letter-spacing: 2px;
+        }
+
+        .back-link {
+            margin-top: 40px;
+            color: var(--neon-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border-bottom: 1px dashed var(--neon-green);
+            padding-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body class="mysterious">
+    <div class="error-container">
+        <h1 class="glitch" data-text="404">404</h1>
+        <p class="error-message">ACCESS DENIED - NODE UNREACHABLE</p>
+        <a href="/" class="back-link">RETURN TO BASE</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+{
+  "name": "G-STRESSER - Advanced DDoS Stress Testing Platform",
+  "short_name": "G-STRESSER",
+  "description": "Elite Layer 4 and Layer 7 DDoS stress testing platform with proprietary attack vectors",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#03030b",
+  "theme_color": "#00ff9d",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["productivity", "security"],
+  "screenshots": [
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Command Center",
+      "short_name": "Dashboard",
+      "description": "Access DDoS command center",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "assets/img/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Download APK",
+      "short_name": "Mobile App",
+      "description": "Download G-STRESSER mobile application",
+      "url": "/download.html",
+      "icons": [
+        {
+          "src": "assets/img/logo.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

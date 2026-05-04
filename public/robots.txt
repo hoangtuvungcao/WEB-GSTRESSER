@@ -1,0 +1,32 @@
+# G-STRESSER Website Robots Configuration
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /download.html
+Allow: /methods.html
+Allow: /assets/
+
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /api-center.html
+Disallow: /dashboard.html
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /api/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://stress.vpsgen.com/sitemap.xml
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

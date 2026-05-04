@@ -1,0 +1,15 @@
+[
+    {
+        "id": "sv1",
+        "name": "server 1",
+        "host": "103.77.246.XXX",
+        "port": 22,
+        "user": "root",
+        "pass": "XXXXXXX",
+        "status": "online",
+        "isLocal": false,
+        "slots": 1,
+        "ongoing": 0
+    }
+
+]

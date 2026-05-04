@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Hub | G-STRESSER - DDoS Stress Testing API Documentation</title>
+    <meta name="description"
+        content="G-STRESSER API documentation and authentication hub. Generate API keys for automated DDoS stress testing. HTTP request examples for Layer 4 & Layer 7 attacks.">
+    <meta name="keywords"
+        content="G-STRESSER API, DDoS API, stress test API, HTTP attack API, automation, API key management, Layer 4 API, Layer 7 API">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="G-STRESSER API Documentation">
+    <meta property="og:description" content="API authentication and automated stress testing integration hub">
+    <meta property="og:url" content="https://stress.vpsgen.com/api-center.html">
+    <style>
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px !important;
+            }
+
+            .card {
+                padding: 25px 15px !important;
+            }
+
+            .glitch {
+                font-size: 2rem !important;
+            }
+
+            .api-key-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px !important;
+            }
+
+            .api-key-display {
+                font-size: 0.8rem !important;
+                word-break: break-all;
+                white-space: normal !important;
+                text-align: center;
+            }
+
+            .key-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .key-actions button {
+                width: 100%;
+            }
+        }
+
+        .api-key-container {
+            background: rgba(0, 255, 157, 0.03);
+            border: 1px dashed rgba(0, 255, 157, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .api-key-display {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--neon-blue);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .key-actions {
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body class="mysterious">
+    <!-- Hacker Style Effects -->
+    <div class="hacker-scanline"></div>
+
+    <!-- Floating Background Effects -->
+    <div class="floating-orb floating-orb-1"></div>
+    <div class="floating-orb floating-orb-2"></div>
+    <div class="floating-orb floating-orb-3"></div>
+
+    <!-- Floating Stars -->
+    <div id="starsContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Geometric Shapes -->
+    <div id="shapesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Neon Lines -->
+    <div id="linesContainer"
+        style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; pointer-events: none;"></div>
+
+    <div class="particle-container" id="particleContainer"></div>
+
+    <div class="glow-overlay">
+        <div class="glow-blob glow-1"></div>
+        <div class="glow-blob glow-2"></div>
+        <div class="glow-blob glow-3"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="notify-container"></div>
+    <div id="global-header"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar injected by sidebar.js?v=1.1 -->
+
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <div>
+                    <h1 class="glitch neon-stroke" data-text="API HUB" style="font-size: 2.5rem; margin: 0;">API HUB
+                    </h1>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Manage your technical
+                        access bridge</p>
+                </div>
+                <div class="header-right-actions">
+                    <button class="btn-small mobile-toggle" onclick="toggleSidebar()"
+                        style="padding: 10px;">MENU</button>
+                    <div class="user-profile" style="margin-left: 15px;">
+                        <div class="user-meta">
+                            <span id="dispUser" class="username">LOGIN REQUIRED</span>
+                            <span class="user-status">ONLINE</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="glass-container" style="max-width: 800px; margin: 0 auto; background: transparent;">
+                <div class="card cyber-border" style="padding: 40px;">
+                    <h3
+                        style="color: var(--neon-green); margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon-green);">
+                        ⟨ AUTHENTICATION KEY ⟩
+                    </h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 25px;">This key allows you to execute
+                        attacks externally via HTTP requests. Keep it secret.</p>
+
+                    <div class="api-key-container neon-box">
+                        <span id="apiKeyDisplay"
+                            class="api-key-display neon-stroke">••••••••••••••••••••••••••••••</span>
+                        <button onclick="copyKey()" class="btn-small"
+                            style="background: var(--neon-blue); color: #000; min-width: 80px; box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);">COPY</button>
+                    </div>
+
+                    <div class="key-actions">
+                        <button onclick="showKey()" class="btn-neon" style="font-size: 0.8rem;">🔓 SHOW
+                            KEY</button>
+                        <button onclick="regenKey()" class="btn-neon"
+                            style="background: rgba(255,100,100,0.1); border-color: #ff5555; color: #ff5555; font-size: 0.8rem;">⟳
+                            REGENERATE</button>
+                    </div>
+                </div>
+
+                <div class="card cyber-border" style="margin-top: 30px; padding: 40px;">
+                    <h3
+                        style="color: var(--neon-purple); margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 0 10px var(--neon-purple);">
+                        ⟨ QUICK START ⟩</h3>
+                    <div style="position: relative;">
+                        <div id="apiUrlBox"
+                            style="background: #050508; padding: 25px 20px; border-radius: 12px; border: 2px solid var(--neon-green); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.6; color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 157, 0.2); text-shadow: 0 0 10px var(--neon-green); word-break: break-all; white-space: normal;">
+                            <span
+                                id="baseUrlDisplay"></span>/api/attack?host=[target]&port=[port]&time=[seconds]&method=[method]&conc=[conc]&key=<b
+                                id="apiKeyPlaceholder" style="text-shadow: 0 0 15px var(--neon-green);">YOUR_API_KEY</b>
+                        </div>
+                        <button onclick="copyApiUrl()" class="btn-small"
+                            style="position: absolute; top: -15px; right: 20px; background: var(--neon-green); color: #000; font-size: 0.65rem; box-shadow: 0 0 15px var(--neon-green);">COPY
+                            API URL</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/sidebar.js?v=1.1"></script>
+    <script src="assets/js/header.js?v=1.1"></script>
+    <script>
+        let currentKey = '';
+
+        async function loadInfo() {
+            const token = localStorage.getItem('token');
+            if (!token) return location.href = '/login';
+
+            try {
+                const res = await fetch('/api/user/info', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (data.error || res.status === 401 || res.status === 403) {
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    return location.href = '/login';
+                }
+
+                document.getElementById('dispUser').innerText = data.username;
+                currentKey = data.apiKey || '';
+                const placeholder = document.getElementById('apiKeyPlaceholder');
+                if (placeholder) {
+                    placeholder.innerText = currentKey || '[YOUR_API_KEY]';
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function showKey() {
+            document.getElementById('apiKeyDisplay').innerText = currentKey;
+            const placeholder = document.getElementById('apiKeyPlaceholder');
+            if (placeholder) {
+                placeholder.innerText = currentKey;
+            }
+        }
+
+        function copyKey() {
+            if (currentKey) {
+                navigator.clipboard.writeText(currentKey);
+                showStatus('API Key copied to clipboard!', 'success');
+            }
+        }
+
+        function copyApiUrl() {
+            const baseUrl = window.location.origin;
+            const fullUrl = `${baseUrl}/api/attack?host=[target]&port=[port]&time=[seconds]&method=[method]&conc=1&key=${currentKey || 'YOUR_API_KEY'}`;
+            navigator.clipboard.writeText(fullUrl);
+            showStatus('API Example URL copied!', 'success');
+        }
+
+        async function regenKey() {
+            if (!confirm('Are you sure? Your old API key will stop working immediately.')) return;
+
+            const token = localStorage.getItem('token');
+            try {
+                const res = await fetch('/api/user/regen-key', {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (!data.error) {
+                    currentKey = data.apiKey;
+                    showKey();
+                    showStatus('New API Key generated!', 'success');
+                }
+            } catch (e) {
+                showStatus('Failed to regenerate key', 'error');
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            location.href = '/login';
+        }
+
+        loadInfo();
+        document.getElementById('baseUrlDisplay').innerText = window.location.origin;
+    </script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "G-STRESSER API Hub",
+        "description": "API authentication and automated stress testing platform",
+        "url": "https://stress.vpsgen.com/api-center.html",
+        "applicationCategory": "DeveloperApplication"
+    }
+    </script>
+
+    <!-- Floating Effects Generator -->
+    <script src="assets/js/floating-effects.js?v=2.0"></script>
+</body>
+
+</html>

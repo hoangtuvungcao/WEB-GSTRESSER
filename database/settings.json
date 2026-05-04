@@ -1,0 +1,21 @@
+{
+    "siteName": "G-STRESSER",
+    "siteTagline": "Professional Cyber Intelligence & Stress Testing",
+    "telegramAdmin": "https://t.me/ZzTLINHzZ",
+    "telegramChannel": "https://t.me/G_STRESSER",
+    "discordLink": "https://discord.gg/H2sZg2sYPu",
+    "logoColor": "#9d00ff",
+    "contactEmail": "support@vpsgen.com",
+    "telegramBotToken": "6337073929:AAFyPXQuPYTp-ySc_1SqM2FY1I0YWjfUxxx",
+    "webhookUrl": "https://discord.com/api/webhooks/1493704845054578848/aNtNzatKghnVt2ly1Yopa5EFDGt1IlMA5Z467_mfmm-jE-VDyxoMNyE4EEqerRKbbsL4",
+    "allowedTelegramIds": [
+        "5805939083"
+    ],
+    "allowedGroups": [
+        "-1003838189190"
+    ],
+    "jwtSecret": "c82c120c62a28ee4010ca1ef6d6d0c12f0ef729f8c7464ee4a8214d5035eebd64c11fe0b6f422a13bd6754c460371cc47d04ad78b55294a6d7bc7cec6670babb",
+    "cncHost": "103.77.246.xxx",
+    "cncPort": "1337",
+    "botSecret": "c197573cdb642139507683819b314f259b6e48f0a906f0005ae765e281934244"
+}

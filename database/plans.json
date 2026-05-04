@@ -1,0 +1,97 @@
+{
+    "Free": {
+        "slots": 0,
+        "concurrents": 0,
+        "maxTime": 0,
+        "bypassBlacklist": false,
+        "price": "0.000đ",
+        "price_usd": "$0",
+        "period": "/Lifetime",
+        "api_access": false,
+        "cnc_access": false,
+        "tele_bot": false,
+        "features": [
+            "No Attack Slots",
+            "No API Access",
+            "No CNC / C2 Access",
+            "No Telegram Bot"
+        ]
+    },
+    "VIP": {
+        "slots": 1,
+        "concurrents": 1,
+        "maxTime": 60,
+        "bypassBlacklist": false,
+        "price": "100.000đ",
+        "price_usd": "$4",
+        "period": "/month",
+        "api_access": false,
+        "cnc_access": false,
+        "tele_bot": true,
+        "features": [
+            "1 Operation Slot",
+            "1 Parallel Attack",
+            "60s Max Duration",
+            "Dashboard Stresser",
+            "Telegram Bot Access"
+        ]
+    },
+    "VIP1": {
+        "slots": 2,
+        "concurrents": 2,
+        "maxTime": 120,
+        "bypassBlacklist": false,
+        "price": "250.000đ",
+        "price_usd": "$10",
+        "period": "/month",
+        "api_access": true,
+        "cnc_access": false,
+        "tele_bot": true,
+        "features": [
+            "2 Operation Slots",
+            "2 Parallel Attacks",
+            "120s Max Duration",
+            "Full API Access",
+            "Dashboard Stresser",
+            "Telegram Bot Access"
+        ]
+    },
+    "VIP2": {
+        "slots": 2,
+        "concurrents": 2,
+        "maxTime": 200,
+        "bypassBlacklist": true,
+        "price": "500.000đ",
+        "price_usd": "$20",
+        "period": "/month",
+        "api_access": true,
+        "cnc_access": true,
+        "tele_bot": true,
+        "features": [
+            "2 Operation Slots",
+            "2 Parallel Attacks",
+            "200s Max Duration",
+            "Full API Access",
+            "CNC / C2 Terminal",
+            "Telegram Bot Access",
+            "Bypass Blacklist"
+        ]
+    },
+    "Admin": {
+        "slots": 2,
+        "concurrents": 2,
+        "maxTime": 200,
+        "bypassBlacklist": true,
+        "price": "∞",
+        "price_usd": "∞",
+        "period": "",
+        "api_access": true,
+        "cnc_access": true,
+        "tele_bot": true,
+        "features": [
+            "Unlimited Power",
+            "Full System Access",
+            "Admin Management"
+        ]
+    }
+}
